@@ -11,7 +11,7 @@ namespace Lab_game
         {
             Factory.CreateRandomArmy(0);
             Factory.CreateRandomArmy(1);
-            Consts.Condition = new Condition();
+            //Consts.Condition = new Condition();
             var comparer = new UnitComparer();
 
             using (Consts.Sw = new StreamWriter("Fight.txt"))

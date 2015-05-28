@@ -94,7 +94,7 @@ namespace Lab_game
         public static bool SomeoneCloned = false;
         public static bool DeadHeat = false;
         public static readonly Random Rand = new Random(DateTime.Now.Millisecond);
-        public static string[] PlayerName = {"Ксюфа", "Вая"};
+        public static string[] PlayerName = {"First", "Second"};
         public static StreamWriter Sw;
         public static List<IUnit>[] Stacks = new List<IUnit>[2];
         public static int MaxRange = 0;
