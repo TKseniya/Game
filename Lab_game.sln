@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_game", "Lab_game\Lab_game.csproj", "{018DE013-F387-42B2-A995-5E2E2547C07B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forms", "Forms\Forms.csproj", "{0425D4C2-B543-4793-B5F4-2CDC66A4CCFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{018DE013-F387-42B2-A995-5E2E2547C07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{018DE013-F387-42B2-A995-5E2E2547C07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{018DE013-F387-42B2-A995-5E2E2547C07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{018DE013-F387-42B2-A995-5E2E2547C07B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0425D4C2-B543-4793-B5F4-2CDC66A4CCFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0425D4C2-B543-4793-B5F4-2CDC66A4CCFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0425D4C2-B543-4793-B5F4-2CDC66A4CCFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0425D4C2-B543-4793-B5F4-2CDC66A4CCFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
