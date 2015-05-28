@@ -88,7 +88,7 @@ namespace Lab_game
 
         public static int N = 0;
         public static Condition Condition;
-        public const int TotalPrice = 1000;
+        public const int TotalPrice = 600;
         public static IStrategy Strategy = new Strategy_3x3();
         public static bool SomeoneDied = false;
         public static bool SomeoneCloned = false;

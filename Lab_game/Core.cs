@@ -7,6 +7,11 @@ namespace Lab_game
 {
     public static class Core
     {
+        static Core()
+        {
+            Factory.CreateRandomArmy(0);
+            Factory.CreateRandomArmy(1);
+        }
         public static void Start()
         {
             Factory.CreateRandomArmy(0);
@@ -14,7 +19,7 @@ namespace Lab_game
             //Consts.Condition = new Condition();
             var comparer = new UnitComparer();
 
-            using (Consts.Sw = new StreamWriter("Fight.txt"))
+            using (Consts.Sw = new StreamWriter("Battle.txt", false))
             {
                 for (var i = 0; i < 2; i++)
                 {
@@ -25,40 +30,44 @@ namespace Lab_game
                 }
                 Consts.Sw.WriteLine();
                 Consts.Strategy.ShowArmies();
+                do
+                {
+                 Battle();   
+                } while (Consts.Stacks[0].Count != 0 && Consts.Stacks[1].Count != 0 && !Consts.DeadHeat);
+                End();
                 Consts.Sw.Close();
             }
         }
 
         private static void End()
         {
-            using (Consts.Sw = new StreamWriter("Fight.txt", true))
-            {
                 if (!Consts.DeadHeat)
                 {
                     Consts.Sw.WriteLine("{0} won",
                         (Consts.Stacks[0].Count() > 0 ? Consts.PlayerName[0] : Consts.PlayerName[1]));
-                    Consts.Sw.Close();
+                   
                 }
-            }
+            
         }
-        public static void Battle()
+        private static void Battle()
         {
-            using (Consts.Sw = new StreamWriter("Fight.txt", true))
-            {
                 Consts.N ++;
                 Consts.Sw.WriteLine("\nState: {0}\n", Consts.N);
                 Consts.Strategy.Battle();
                 Consts.Sw.WriteLine();
                 if (Consts.Stacks[0].Count == 0 || Consts.Stacks[1].Count == 0)
-                    End();
+                    return;
+
+            
                 IUnit unit;
                 int Range;
                 var i = Consts.Strategy.CalcIndex(out Range);
-
+                
                 if (Consts.SomeoneDied)
                 {
                     Consts.Strategy.ShowArmies();
                     Consts.SomeoneDied = false;
+                    Consts.SomeoneCloned = false;
                     if (Consts.Stacks[0].Count == 0 || Consts.Stacks[1].Count == 0)
                         return;
                 }
@@ -111,7 +120,6 @@ namespace Lab_game
                 if (Consts.DeadHeat)
                 {
                     Consts.Sw.WriteLine("Friendship won!");
-                    Consts.Sw.Close();
                     return;
                 }
 
@@ -121,14 +129,8 @@ namespace Lab_game
                     Consts.Strategy.ShowArmies();
                     Consts.SomeoneDied = false;
                     Consts.SomeoneCloned = false;
-
                 }
-                if (!(Consts.Stacks[0].Count > 0 && Consts.Stacks[1].Count > 0))
-                {
-                    Consts.Sw.Close();
-                    End();
-                }
-            }
+            
         }
     }
 

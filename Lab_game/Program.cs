@@ -6,6 +6,7 @@ namespace Lab_game
     {
         private static void Main(string[] args)
         {
+            Core.Start();
         }
     }
 }
